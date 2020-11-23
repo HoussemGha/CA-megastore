@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: HoussemGha/boutique
+
+media_folder: static/uploads
+public_folder: uploads
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    format: 'json'
+    folder: 'assets/content/blog'
+    create: true
+    identifier_field: title
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'PublishDate', name: 'date', widget: 'datetime',dateFormat: "DD.MM.YYYY", timeFormat: "HH:mm"  }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'produt'
+    label: 'product'
+    format: 'json'
+    folder: 'assets/content/product'
+    create: true
+    identifier_field: title
+    fields:
+      - { label: 'Titre', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+      - {label: 'Date de publication', name: "date", widget: "date",format: 'MMM Do YY'}
+      - { label: 'Prix', name: 'price', widget: 'string' }
+      - { label: 'Couleurs disponibles', name: 'color',widget: 'select', options: ["BLANC", "ROUGE", "NOIR","GRIS"] }
+      - { label: 'Tailles', name: 'size', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Quantité Disponible', name: 'quantity', widget: 'number' }
+      - { label: 'Catégories',name: 'category', widget: 'select', options: ["MAILLOT", "VESTE", "CHAUSSURE", "SURVETEMENT","ACCESOIRES", "AUTRE"]}
+            
